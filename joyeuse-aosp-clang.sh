@@ -3,7 +3,7 @@
 # Copyright (C) 2018 Rama Bondan Prakoso (rama982)
 # Copyright (C) 2020 Fiqri Ardyansyah (fiqri19102002)
 # Copyright (C) 2020 Agung Pratama (skylarkAurora)
-# For Xiaomi Redmi Note 5 / Pro (sdm636/sdm660)
+# For Xiaomi Redmi Note 9 Pro (Joyeuse)
 
 # Color
 green='\033[0;32m'
@@ -14,7 +14,7 @@ KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
 ZIP_DIR=$KERNEL_DIR/AnyKernel3
 CONFIG_DIR=$KERNEL_DIR/arch/arm64/configs
-CONFIG=whyred_defconfig
+CONFIG=vendor/joyeuse_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
@@ -29,7 +29,7 @@ export CC=$PWD/clang-11.0/bin/clang-11
 export KBUILD_COMPILER_STRING=$($CC --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
 export CLANG_TREPLE=aarch64-linux-gnu-
 export KBUILD_BUILD_USER="SkylarkAurora"
-export KBUILD_BUILD_HOST="SkylarkX-Project-Whyred"
+export KBUILD_BUILD_HOST="Lunatic"
 
 # Banner
 echo -e "  ___  ___  _ __ (_) ___"
